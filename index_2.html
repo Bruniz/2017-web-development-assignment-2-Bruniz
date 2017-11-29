@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style2.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="script2.js"></script>
+
+    <title>Exercise 2</title>
+</head>
+<body>
+<!-- Main container of page -->
+<div class="container">
+
+    <!-- First row containing the input fields and search button -->
+    <div class="row">
+        <div class="column1">
+            <div class="row">
+                <span>Select your country</span>
+                <select name="Country" id="country">
+                    <option value="fi">Finland</option>
+                    <option value="se">Sweden</option>
+                    <option value="fr">France</option>
+                    <option value="de">Germany</option>
+                    <option value="us">USA</option>
+                </select>
+            </div>
+            <div class="row">
+                <span>ZIP code </span><input type="text" id="zipCode">
+            </div>
+            <div class="row">
+                <!-- onClick calls the search function -->
+                <button id="search" onclick="search()"> Search</button>
+                <!-- Message that appears if nothing was found -->
+                <span id="error">Nothing was found</span>
+            </div>
+        </div>
+        <div class="column2">
+            <div class="row center">
+                <span>
+                    History of the 10 last searches
+                </span>
+            </div>
+            <div class="row">
+                <ul id="history"></ul>
+            </div>
+            <div class="row center">
+                <!-- Extra button for clearing history -->
+                <button onclick="clearHistory()">Clear History</button>
+            </div>
+        </div>
+    </div>
+    <!-- Row for the search result -->
+    <div class="row">
+        <!-- Table for the search result -->
+        <table id="locations-table">
+            <tbody id="locations-table-body"></tbody>
+        </table>
+    </div>
+
+    <!-- Row for the map -->
+    <div class="row">
+        <!-- Container for the map -->
+        <div id="map">
+
+        </div>
+    </div>
+
+</div>
+<!-- When page has loaded get the history from localStorage -->
+<script>displayHistory()</script>
+<!-- Google map API -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqmIzB4KoEKUjdqwoEJcxKId9mZwRgKUo"></script>
+</body>
+
+</html>
