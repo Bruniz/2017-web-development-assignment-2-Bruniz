@@ -1,0 +1,85 @@
+/* Set box-sizing to border-box so all elements are more easily the same size */
+* {
+    box-sizing: border-box;
+}
+
+/* Set the html body to use flex for arranging the elements and also to fill the whole width. Also a max width
+    set so the page isn't spread to infinity on huge displays */
+body {
+    display: flex;
+    flex-wrap: wrap;
+    font-family: Avenir;
+    max-width: 2000px;
+    padding: 20px 10px;
+}
+/* Styling for the main container, all content goes here. Align all content vertically */
+.container {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 50%;
+    justify-content: center;
+}
+/* One row inside the main container, aligns the content to the center */
+.row {
+    display: flex;
+    justify-content: center;
+    padding: 10px 10px;
+
+}
+/* THe input field should change size -> flex, 20% wide my default */
+input {
+    display: flex;
+    flex: 0 1 20%;
+}
+/* When the field is selected (has focus) the background color is lightgrey */
+input:focus {
+    background-color: lightgrey;
+}
+/* Container for decode button, aligns button to the middle */
+.button-container1 {
+    display: flex;
+    justify-content: space-around;
+    flex: 0 1 25%;
+
+}
+/* Container for the show/hide button, pushes the button to the right */
+.button-container2 {
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 10px;
+}
+/* Styling for the buttons */
+button {
+    padding: 8px 16px;
+    border: none;
+    background-color: #3a3a3a;
+    text-decoration: none;
+    color: white;
+}
+/* The outer container for the information arranges children vertically. */
+.information-container {
+    display: flex;
+    flex: 0 1 75%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+/* The container for the information, spread children vertically, has a border around it */
+#information {
+    display: flex;
+    flex-direction: column;
+    border: solid 2px #3a3a3a;
+    border-radius: 2px;
+    padding-top: 10px;
+}
+/* One row inside the #information container spreads children horizontally filling whole width */
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+/* The container for the barcode, align in the middle */
+.info-row-bar-code {
+    display: flex;
+    align-self: center;
+}

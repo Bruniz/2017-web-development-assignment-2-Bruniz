@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style1.css">
+    <script src="script1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="JsBarcode.code128.min.js"></script>
+    <title>Exercise 1</title>
+</head>
+<body>
+<!-- Main container of page -->
+<div class="container">
+
+    <!-- First row containing the input field -->
+    <div class="row">
+        <span>Enter Virtual bar code: </span><input type="text" id="virtualCode">
+    </div>
+    <!-- Second row containing the decode button -->
+    <div class="row">
+        <div class="button-container1">
+            <!-- When the button is clicked call the function that disassembles the virtual bar code, displays the
+              parts and encodes the bar code -->
+            <button id="decode" onclick="decodeVirtualBarCode()">Decode</button>
+        </div>
+    </div>
+
+    <!-- Third row containing the hide/show button and the info field -->
+    <div class="row">
+        <div class="information-container">
+            <div class="button-container2">
+                <!-- Button for hiding and showing the information. Has an onClick handler for toggling the info -->
+                <button id="toggle" onclick="toggleInformation()"></button>
+            </div>
+            <!-- The information box, has id for more efficient jQuery execution -->
+            <div id="information">
+                <!-- First row of information -->
+                <div class="info-row">
+                    <span>Payee's IBAN:</span> <span id="iban"></span>
+                    <span>Amount to be paid:</span><span id="amount"> </span>
+                </div>
+                <!-- Second row of information -->
+                <div class="info-row">
+                    <span>Payment reference:</span> <span id="reference"></span>
+                    <span>Due date:</span><span id="due"> </span>
+                </div>
+                <!-- Container for the bar code -->
+                <div class="info-row-bar-code">
+                    <!-- The canvas the bar code will be drawn in -->
+                    <canvas id="bar-code"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Script to show the correct text depending on the state of the application. Called here at the end of the body
+        so that all elements are loaded -->
+<script>displayBtnTxt()</script>
+
+</body>
+
+</html>
