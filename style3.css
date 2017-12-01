@@ -1,0 +1,57 @@
+/* Set box-sizing to border-box so all elements are more easily the same size */
+* {
+    box-sizing: border-box;
+}
+
+/* Set the html body to use flex for arranging the elements and also to fill the whole width. Also a max width
+    set so the page isn't spread to infinity on huge displays */
+body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-family: Avenir;
+    max-width: 2000px;
+    padding: 20px 10px;
+}
+/* Styling for the main container, all content goes here. Align all content vertically */
+.container {
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 75%;
+    justify-content: space-around;
+}
+/* One row inside the main container, aligns the content to the center */
+.row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px;
+
+}
+/* Extra class for centering elements */
+.center {
+    justify-content: center;
+}
+/* The input field should change size */
+select {
+    display: flex;
+    flex: 0 1 20%;
+    margin-left: 20px;
+}
+/* Styling for the buttons */
+button {
+    padding: 8px 16px;
+    border: none;
+    background-color: #3a3a3a;
+    text-decoration: none;
+    color: white;
+}
+/* Size for the map */
+#map {
+    height: 600px;
+    width: 100%;
+}
+/* Error text that appears if nothing is found */
+#error, #noRoute {
+    color: red;
+    display: none;
+}

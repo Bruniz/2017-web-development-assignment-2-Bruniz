@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style3.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="script3.js"></script>
+
+    <title>Exercise 3</title>
+</head>
+<body>
+<!-- Main container -->
+<div class="container">
+    <!-- Row for the select -->
+    <div class="row">
+        <div class="row"}>
+            <span>Select bus line</span>
+            <!-- Empty select popolated by JS on page load -->
+            <select name="Buses" id="busLines"></select>
+        </div>
+        <!-- Error message that is shown if no route is found -->
+        <span id="error">No route found for this bus line</span>
+    </div>
+    <!-- Row for the buttons -->
+    <div class="row">
+        <!-- Buttons with appropriate click handlers -->
+        <button onClick="displayBuses()">Show buses</button>
+        <button onClick="displayBuses()">Refresh</button>
+        <button onClick="displayRoute()">Show route</button>
+    </div>
+    <!-- Row for the map -->
+    <div class="row">
+        <!-- Error message if you try to show busses before route is drawn on map -->
+        <span id="noRoute"}>Please select route and click 'Show route' first</span>
+        <!-- Map container -->
+        <div id="map"></div>
+    </div>
+</div>
+<!-- Google maps api with key -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqmIzB4KoEKUjdqwoEJcxKId9mZwRgKUo"></script>
+<!-- On page load get the api parameters then load available routes -->
+<script>getDataSet()</script>
+</body>
+</html>
