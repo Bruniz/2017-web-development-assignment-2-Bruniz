@@ -14,7 +14,7 @@ function search() {
         // Make the HTTP request
         let client = new XMLHttpRequest();
         // Add the country and zipCode to the uri
-        client.open("GET", `http://api.zippopotam.us/${country}/${zipCode}`, true);
+        client.open("GET", `https://api.zippopotam.us/${country}/${zipCode}`, true);
         // Code from zippopotam. When state of request changes the check state. Event listener
         client.onreadystatechange = function () {
 
